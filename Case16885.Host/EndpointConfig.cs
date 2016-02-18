@@ -7,7 +7,15 @@ namespace Case16885.Host
     {
         public void Customize(BusConfiguration configuration)
         {
+            configuration.EndpointName("Case16885.Host");
+            configuration.UseTransport<RabbitMQTransport>()
+                .ConnectionString("host=RABBITMQ");
 
+            configuration.Conventions().DefiningCommandsAs(t => t.Namespace != null && t.Namespace.EndsWith(".Messages"));
+
+            configuration.UseSerialization<JsonSerializer>();
+
+            configuration.UsePersistence<InMemoryPersistence>();
         }
     }
 }

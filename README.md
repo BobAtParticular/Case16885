@@ -6,3 +6,5 @@ Reproduction for Case 16885
 * NServiceBus.RabbitMQ 3.0.1
 * NServiceBus.RavenDB 3.0.6
 * NServiceBus.StructureMap 5.0.1
+* RabbitMQ 3.5.7
+* Erlang R16B03
